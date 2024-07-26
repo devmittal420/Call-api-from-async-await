@@ -9,8 +9,6 @@ const fetchCategories = async () =>{
         console.error('Error fetching categories:', error);
     }
 }
-fetchCategories();
-
 
 const fetchProducts = async () =>{
     try {
@@ -21,4 +19,10 @@ const fetchProducts = async () =>{
         console.error('Error fetching products:', error);
     }
 }
-fetchProducts();
+
+const categoriesAndProducts = async () => {
+    await fetchCategories();
+    await fetchProducts();
+}
+
+categoriesAndProducts();
